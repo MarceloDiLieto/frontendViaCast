@@ -1,4 +1,5 @@
 import { Component, OnInit, DoCheck } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -118,9 +119,10 @@ export class HomeComponent implements OnInit, DoCheck {
   ];
   listaFiltrada: any;
 
-  constructor() {}
+  constructor(private router: Router) {}
   busca = "";
   arrayVazio = false;
+  mostrarMenu: boolean = false;
 
   ngOnInit() {
     this.listaFiltrada = this.listaPessoas;
@@ -142,4 +144,10 @@ export class HomeComponent implements OnInit, DoCheck {
       this.arrayVazio = false;
     }
   }
+
+  destUsers() {
+    this.mostrarMenu = false;
+    this.router.navigate(["/usuarios"]);
+  }
+
 }

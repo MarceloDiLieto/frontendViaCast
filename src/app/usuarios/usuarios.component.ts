@@ -194,7 +194,7 @@ export class UsuariosComponent implements OnInit, DoCheck {
       width: "600px"
     });
     dialogRef.componentInstance.dadosPessoa = pessoa;
-    dialogRef.componentInstance.isEdit = true;
+    dialogRef.componentInstance.isEdit = false;
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         var index = this.listaPessoas.indexOf(pessoa);
@@ -212,7 +212,6 @@ export class UsuariosComponent implements OnInit, DoCheck {
     });
     dialogRef.componentInstance.isEdit = false;
     dialogRef.afterClosed().subscribe(result => {
-      debugger
       if (result) {
         this.listaPessoas.push(result);
       }
