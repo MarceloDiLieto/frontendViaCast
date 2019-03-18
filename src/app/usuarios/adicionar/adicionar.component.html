@@ -1,0 +1,93 @@
+<button
+  type="button"
+  class="close"
+  data-dismiss="modal"
+  aria-label="Close"
+  (click)="onCloseCancel()"
+>
+  <span aria-hidden="true">&times;</span>
+</button>
+<h3 style="font-weight: bold" *ngIf="isEdit">Editar Dados</h3>
+<h3 style="font-weight: bold" *ngIf="!isEdit">Adicionar Dados</h3>
+<hr />
+<mat-dialog-content>
+  <div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="nome"
+        placeholder="Nome completo"
+        [(ngModel)]="dadosPessoa.nome"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="cpf"
+        placeholder="CPF"
+        [(ngModel)]="dadosPessoa.cpf"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="nascimento"
+        placeholder="nascimento"
+        [(ngModel)]="dadosPessoa.nascimento"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="mae"
+        placeholder="Nome da mãe"
+        [(ngModel)]="dadosPessoa.mae"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="profissao"
+        placeholder="Profissão"
+        [(ngModel)]="dadosPessoa.profissao"
+      />
+    </div>
+    <div class="form-group">
+      <select class="form-control" id="sexo" placeholder="Sexo">
+        <option>Masculino</option>
+        <option>Feminino</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        id="descricao"
+        rows="2"
+        placeholder="Descrição"
+        [(ngModel)]="dadosPessoa.descricao"
+      ></textarea>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    mat-dialog-close
+    class="btn btn-sm btn-outline-primary"
+    style="margin-right: 3px"
+    (click)="onCloseCancel()"
+  >
+    Cancelar
+  </button>
+  <button
+    class="btn btn-sm btn-save"
+    (click)="onCloseConfirmEdit()"
+  >
+    Salvar
+  </button>
+  
+</mat-dialog-actions>

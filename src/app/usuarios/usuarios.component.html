@@ -1,0 +1,89 @@
+<div class="container" style=" margin-top: 70px">
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <button
+          class="btn btn-sm btn-cancel mb-1 right"
+          style="position:relative; float:right"
+          (click)="abrirModalAdicionar()"
+        >
+          Adicionar Usuário
+        </button>
+      </div>
+      <div class="input-group md-form form-sm form-2 pl-0 mb-2">
+        <input
+          class="form-control my-0 py-1 red-border pr-4"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+          [(ngModel)]="busca"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="card-deck" style=" margin: 0 auto" *ngIf="!arrayVazio">
+    <div *ngFor="let pessoa of listaFiltrada">
+      <div class="card" style="width:13rem;">
+        <div (click)="abrirModalDetalhes(pessoa)" style="cursor: pointer">
+          <div class="image-content" style="background-color: rgb(47, 47, 61)">
+            <div class="cube-text">
+              {{ getFirstLetters(pessoa.nome) | uppercase }}
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div
+            (click)="abrirModalDetalhes(pessoa)"
+            style="cursor: pointer;"
+            class="mb-3"
+          >
+            <h5
+              class="card-title text-limit"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="{{ pessoa.nome }}"
+            >
+              {{ pessoa.nome }}
+            </h5>
+            <div style="color: rgb(99, 99, 99); font-size: 85%">
+              <div>
+                {{ pessoa.nascimento }}
+              </div>
+              <div>
+                {{ pessoa.profissao }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 10px" class="mb-2">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-primary"
+            style="margin-right: 3px"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+            (click)="abrirModalEditar(pessoa)"
+          >
+            Editar
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-cancel"
+            (click)="abrirModalDeletar(pessoa)"
+          >
+            Deletar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="arrayVazio" class="mt-4">
+    <div style="display: flex; justify-content: center;">
+      <img src="https://www.alfatronic.com.br/assets/images/404.png" alt="" />
+    </div>
+    <h2 style="font-weight:bold; color: gray; text-align: center" class="mt-4">
+      Nenhum resultado encontrado
+    </h2>
+  </div>
+</div>

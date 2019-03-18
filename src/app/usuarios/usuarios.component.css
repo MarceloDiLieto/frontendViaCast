@@ -1,0 +1,74 @@
+
+
+.card-title {
+  font-size: 14px;
+}
+
+.card-link {
+  font-size: 11px;
+}
+
+.img-size {
+  height: 50;
+  width: 10;
+}
+
+.form-control {
+  width: 85%;
+  /* margin: 8px;
+    transition: 0.3s; */
+}
+
+.card {
+  margin: 10px 5px;
+  transition: transform 0.3s;
+  border-radius: 10px
+}
+
+/* .card:hover {
+    transform: scale(1.01);
+  } */
+
+.edit:hover {
+  background: #0447a5;
+}
+
+/* .card-deck {
+      padding-left: 20%;
+   } */
+
+.text-limit {
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-edit {
+  background-color: #1a1d4e;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #808080;
+  color: white;
+}
+
+.card-body {
+  padding: 0.8rem 0.5rem 0;
+}
+
+.image-content {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px
+}
+.cube-text {
+  color: white;
+  font-size: 220%;
+  font-weight: bold;
+}

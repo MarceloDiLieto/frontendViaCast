@@ -1,0 +1,37 @@
+<button
+  type="button"
+  class="close"
+  data-dismiss="modal"
+  aria-label="Close"
+  (click)="onCloseCancel()"
+>
+  <span aria-hidden="true">&times;</span>
+</button>
+<h3 style="font-weight: bold">Detalhes do Usuário</h3>
+<hr />
+<mat-dialog-content>
+  <div class="row">
+    <div class="col-md-6">
+      <p><b>Nome:</b> {{ dadosPessoa.nome }}</p>
+      <p><b>CPF: </b>{{ dadosPessoa.cpf }}</p>
+      <p><b>Nascimento: </b>{{ dadosPessoa.nascimento }}</p>
+      <p><b>Nome da Mãe: </b>{{ dadosPessoa.mae }}</p>
+      <p><b>Sexo: </b>{{ dadosPessoa.sexo }}</p>
+    </div>
+    <div class="col-md-6">
+      <p><b>Descrição:</b></p>
+      <p class="text-md-left">
+        {{ dadosPessoa.descricao }}
+      </p>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    mat-dialog-close
+    class="btn btn-outline-primary btn-sm"
+    style="margin-right: 5px"
+  >
+    Fechar
+  </button>
+</mat-dialog-actions>

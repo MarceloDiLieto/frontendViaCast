@@ -1,0 +1,27 @@
+<button
+  type="button"
+  class="close"
+  data-dismiss="modal"
+  aria-label="Close"
+  (click)="onCloseCancel()"
+>
+  <span aria-hidden="true">&times;</span>
+</button>
+<h3 style="font-weight: bold">Confirmação de Deleção</h3>
+<mat-dialog-content>
+  <div class="modal-body">
+    <p>Deseja realmente excluir o registro?</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    class="btn btn-sm btn-outline-primary"
+    style="margin-right: 3px"
+    (click)="onCloseCancel()"
+  >
+    Cancelar
+  </button>
+  <button class="btn btn-sm btn-danger" (click)="onCloseConfirm()">
+    Apagar
+  </button>
+</mat-dialog-actions>
